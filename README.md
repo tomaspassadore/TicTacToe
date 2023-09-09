@@ -1,4 +1,4 @@
-# React + Vite
+# Tic Tac Toe
 This project was created to practice some React concepts. The game uses local storage to continue with the game that has been started.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
