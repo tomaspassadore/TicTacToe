@@ -1,0 +1,168 @@
+:root {
+    --main-color:rgba(0, 0, 0, 0.4); /* Color from the squares */
+    --hover-color: rgba(0, 0, 0, 0.6); /* Color from the hover effects */
+    --background-color:linear-gradient(45deg, rgb(157, 22, 191), rgb(240, 151, 35)); /* Background color */
+}
+* {
+    margin: 0px;
+    color: white;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    height: 100vh;
+    background: var(--background-color);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+/* Grid's style */
+.container h1 {
+    text-align: center;
+    font-size: 3em;
+    padding-top: 60px;
+}
+.grid-container {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    justify-content: center;
+}
+/* "TURN OF" box's style */
+.container-turn{
+    display: flex;
+    align-items: center;
+    color: black;
+    font-weight: 900;
+    justify-content: center;
+    margin: 30px 0px;
+    font-size: 1.1em;
+}
+.container-turn h3 {
+    font-size: 1.8em;
+}
+.turn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: var(--main-color);
+    font-size: 2em;
+    font-weight: 500;
+    margin: 0px 20px;
+    border-radius: 7px;
+}
+/* Component's styles */
+/* Square's styles*/
+.square {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    font-size: 5em;
+    transition: background-color, 0.5s;
+}
+/* RESTART button style*/
+.restart {
+    width: 458px;
+    height: 70px;
+    outline: none;
+    border: none;
+    font-size: 2em;
+    margin: 20px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    transition: background-color, 0.5s;
+}
+/* Modal's style */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    width: 100vw;
+}
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 40%; */
+    width: 375px;
+    height: 300px;
+    font-size: 2.3em;
+    border-radius: 15px;
+    background: var(--background-color);
+    /* background-color: rgba(0, 0, 0, 0.9); */
+}
+.modal-button {
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8em;
+    cursor: pointer;
+    width: 220px;
+    height: 70px;
+    background-color: var(--main-color);
+    transition: background-color, 0.5s;
+}
+
+/* Hover effects */
+.restart:hover, .square:hover, .modal-button:hover {
+    background-color: var(--hover-color);
+}
+/* Media queries */
+@media screen and (max-width:600px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 120px);
+        grid-template-rows: repeat(3, 120px);
+        font-size: 0.8em;
+    }
+    .restart {
+        width: 368px;
+        font-size: 1.7em;
+    }
+    .modal-text {
+        width: 310px;
+        height: 250px;
+        font-size: 2em;
+    }
+}
+@media screen and (max-width:400px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        font-size: 0.65em;
+    }
+    .restart {
+        width: 308px;
+        font-size: 1.5em;
+    }
+    .modal-text {
+        width: 270px;
+        height: 210px;
+        font-size: 1.8em;
+    }
+    .modal-button {
+        margin-top: 10px;
+        height: 60px;
+        width: 190px;
+        font-size: 0.8em;
+    }
+}
